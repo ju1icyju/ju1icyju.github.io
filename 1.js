@@ -34,6 +34,8 @@ function draw() {
   let tilesY = tilesYSlider.value();
   let inputText = userInput.value();
 
+  console.log("Draw Function Called"); // Логирование при каждом вызове draw
+
   if (!isPaused) {
     if (darkMode) {
       background(255);
@@ -58,13 +60,8 @@ function draw() {
   }
 }
 
-function mouseClicked() {
-  isPaused = !isPaused;
-}
-
 function setRandomSyValue() {
   let randomSyValue = Math.floor(random(1, 5));
-  console.log("Random Sy Value:", randomSyValue);
   drawTiles(tilesXSlider.value(), tilesYSlider.value(), randomSyValue);
 }
 
@@ -90,6 +87,8 @@ function drawTiles(tilesX, tilesY, randomValue = 2) {
       let dy = y * tileH;
       let dw = tileW;
       let dh = tileH;
+
+
 
       copy(pg, sx, sy, sw, sh, dx, dy, dw, dh);
     }
